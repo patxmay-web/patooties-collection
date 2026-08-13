@@ -3,16 +3,172 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Patooties Collection</title>
+
+    <style>
+        body {
+            background-color: #f5f1eb;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #222222;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 52px;
+            letter-spacing: 4px;
+            color: #171717;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: #806f5b;
+            margin-bottom: 55px;
+        }
+
+        section {
+            background-color: #fffdf9;
+            border: 1px solid #c8a96b;
+            border-radius: 4px;
+            padding: 40px;
+            margin: 35px auto;
+            max-width: 1050px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .owner {
+            text-align: center;
+        }
+
+        .owner h2 {
+            color: #1d1d1d;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .owner p {
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #5f574f;
+            max-width: 750px;
+            margin: 0 auto 30px;
+        }
+
+        .owner img {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #c8a96b;
+            padding: 5px;
+        }
+
+        .collection-title {
+            text-align: center;
+            color: #171717;
+            font-size: 36px;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .collection-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 2px;
+            background-color: #c8a96b;
+            margin: 15px auto;
+        }
+
+        .product {
+            background-color: #fdfbf7;
+            border: 1px solid #d8c7aa;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 520px;
+            text-align: center;
+        }
+
+        .product h3 {
+            color: #222222;
+            font-size: 27px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product h4 {
+            color: #b08b4f;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .product p {
+            font-family: Arial, sans-serif;
+            color: #665f58;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .product img {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            margin-top: 20px;
+            border: 1px solid #d8c7aa;
+        }
+
+        footer {
+            text-align: center;
+            color: #806f5b;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .collection-title {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <h1>Patooties Collection</h1>
 
-    <p>Timeless luxury bags, carefully curated for every occasion.</p>
+    <p class="tagline">
+        Timeless luxury bags, carefully curated for every occasion.
+    </p>
 
-    <section>
+
+    <section class="owner">
+
         <h2>Patricia May</h2>
 
         <p>
@@ -24,6 +180,72 @@
         <img src="owner.jpg" alt="Photo of Patricia May">
 
     </section>
+
+
+    <section>
+
+        <h2 class="collection-title">Our Collection</h2>
+
+
+        <div class="product">
+
+            <h3>Classic Shoulder Bag</h3>
+
+            <h4>Elegant Everyday Style</h4>
+
+            <p>
+                A timeless shoulder bag that adds a touch of elegance to any
+                outfit. Perfect for everyday use and special occasions.
+            </p>
+
+            <img src="shoulder-bag.jpg"
+                alt="Classic luxury shoulder bag">
+
+        </div>
+
+
+        <div class="product">
+
+            <h3>Mini Handbag</h3>
+
+            <h4>Simple and Chic</h4>
+
+            <p>
+                A stylish mini handbag for those who love a simple and
+                sophisticated look. Perfect for carrying your everyday
+                essentials.
+            </p>
+
+            <img src="mini-handbag.jpg"
+                alt="Small elegant handbag">
+
+        </div>
+
+
+        <div class="product">
+
+            <h3>Classic Tote Bag</h3>
+
+            <h4>Spacious and Stylish</h4>
+
+            <p>
+                A classic tote designed for both style and convenience.
+                Spacious enough for your daily essentials while keeping
+                your look elegant.
+            </p>
+
+            <img src="tote-bag.jpg"
+                alt="Classic luxury tote bag">
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>© 2026 Patooties Collection</p>
+        <p>Elegance in every detail.</p>
+    </footer>
 
 </body>
 
