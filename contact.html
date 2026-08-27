@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patooties Collection | Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: #2e5c8a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: 2px solid #2e5c8a;
+        }
+
+        button {
+            background-color: #2e5c8a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        button:hover {
+            background-color: #1a3a5c;
+        }
+
+        .direct-contact {
+            background-color: #f4f7f9;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .direct-contact a {
+            color: #2e5c8a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Patooties Collection</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <p>Have questions about your order or our products? Reach out directly or fill out the form below!</p>
+
+        <!-- Direct Email Information -->
+        <div class="direct-contact">
+            <p><strong>Email Us Directly:</strong> <a href="mailto:patriciamay.manset@tup.edu.ph">patriciamay.manset@tup.edu.ph</a></p>
+        </div>
+
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Your details</legend>
+
+                <div class="form-group">
+                    <label for="full-name">Name</label>
+                    <input type="text" id="full-name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="user-email">Email</label>
+                    <input type="email" id="user-email" name="email" required placeholder="example@domain.com">
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="subject-select">Subject</label>
+                <select id="subject-select" name="subject" required>
+                    <option value="" disabled selected>-- Select an option --</option>
+                    <option value="product-question">Product Question</option>
+                    <option value="order-status">Order Status</option>
+                    <option value="wholesale-inquiry">Wholesale Inquiry</option>
+                    <option value="something-else">Something Else</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="user-message">Message</label>
+                <textarea id="user-message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+            </div>
+
+            <button type="submit">Send message</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Patooties Collection &middot; Patricia May Manset</p>
+    </footer>
+
+</body>
+</html>
