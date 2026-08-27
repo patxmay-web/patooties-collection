@@ -1,168 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patooties Collection | Contact Us</title>
+
+    <title>Contact Us - Patooties Collection</title>
+
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            max-width: 650px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-            color: #333;
+            background-color: #f5f1eb;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #222222;
+            margin: 0;
+            padding: 40px;
         }
 
-        header nav ul {
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 52px;
+            letter-spacing: 4px;
+            color: #171717;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: #806f5b;
+            margin-bottom: 25px;
+        }
+
+        /* Navigation Styling */
+        nav ul {
             list-style: none;
             padding: 0;
+            margin: 20px 0 0;
             display: flex;
-            gap: 15px;
+            justify-content: center;
+            gap: 25px;
         }
 
-        header nav a {
-            color: #2e5c8a;
+        nav a {
+            font-family: Arial, sans-serif;
             text-decoration: none;
+            color: #806f5b;
             font-weight: bold;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        fieldset {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-        }
-
-        legend {
-            font-weight: bold;
-            padding: 0 8px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             font-size: 14px;
-            width: 100%;
-            box-sizing: border-box;
+            transition: color 0.3s;
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus,
-        button:focus {
-            outline: 2px solid #2e5c8a;
+        nav a:hover, nav a.active {
+            color: #c8a96b;
+            border-bottom: 2px solid #c8a96b;
+            padding-bottom: 4px;
         }
 
-        button {
-            background-color: #2e5c8a;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
+        section {
+            background-color: #fffdf9;
+            border: 1px solid #c8a96b;
             border-radius: 4px;
-            cursor: pointer;
-            align-self: flex-start;
+            padding: 40px;
+            margin: 35px auto;
+            max-width: 650px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
-        button:hover {
-            background-color: #1a3a5c;
+        .contact-title {
+            text-align: center;
+            color: #171717;
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
-        .direct-contact {
-            background-color: #f4f7f9;
-            padding: 15px 20px;
-            border-radius: 8px;
+        .contact-subtitle {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            color: #5f574f;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        .form-group {
             margin-bottom: 20px;
         }
 
-        .direct-contact a {
-            color: #2e5c8a;
-            font-weight: bold;
+        label {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #171717;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d8c7aa;
+            background-color: #fdfbf7;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: #222222;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #c8a96b;
+        }
+
+        button {
+            width: 100%;
+            background-color: #c8a96b;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #b08b4f;
+        }
+
+        footer {
+            text-align: center;
+            color: #806f5b;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 25px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <h1>Patooties Collection</h1>
+        <p class="tagline">Timeless luxury bags, carefully curated for every occasion.</p>
+        
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Contact Us</h2>
-        <p>Have questions about your order or our products? Reach out directly or fill out the form below!</p>
+        <section>
+            <h2 class="contact-title">Get in Touch</h2>
+            <p class="contact-subtitle">Have questions or inquiries? Send us a message below.</p>
 
-        <!-- Direct Email Information -->
-        <div class="direct-contact">
-            <p><strong>Email Us Directly:</strong> <a href="mailto:patriciamay.manset@tup.edu.ph">patriciamay.manset@tup.edu.ph</a></p>
-        </div>
-
-        <form action="#" method="POST">
-            <fieldset>
-                <legend>Your details</legend>
-
+            <form action="#" method="POST">
                 <div class="form-group">
-                    <label for="full-name">Name</label>
-                    <input type="text" id="full-name" name="name" required placeholder="Enter your full name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="user-email">Email</label>
-                    <input type="email" id="user-email" name="email" required placeholder="example@domain.com">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
                 </div>
-            </fieldset>
 
-            <div class="form-group">
-                <label for="subject-select">Subject</label>
-                <select id="subject-select" name="subject" required>
-                    <option value="" disabled selected>-- Select an option --</option>
-                    <option value="product-question">Product Question</option>
-                    <option value="order-status">Order Status</option>
-                    <option value="wholesale-inquiry">Wholesale Inquiry</option>
-                    <option value="something-else">Something Else</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="user-message">Message</label>
-                <textarea id="user-message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
-            </div>
-
-            <button type="submit">Send message</button>
-        </form>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Patooties Collection &middot; Patricia May Manset</p>
+        <p>© 2026 Patooties Collection</p>
+        <p>Elegance in every detail.</p>
     </footer>
 
 </body>
+
 </html>
