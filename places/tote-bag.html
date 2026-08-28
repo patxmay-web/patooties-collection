@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everyday Tote Bag - Patooties Collection</title>
-    <!-- Relative link papuntang root style.css -->
+    <title>Classic Tote Bag - Patooties Collection</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -14,7 +13,6 @@
     <header>
         <nav>
             <ul>
-                <!-- Path trap fix: gamit ang ../ para sa main root navigation -->
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
                 <li><a href="../contact.html">Contact Us</a></li>
@@ -23,28 +21,19 @@
     </header>
 
     <main class="product-page">
-        <!-- 1. Name in H1 -->
-        <h1>Everyday Tote Bag</h1>
+        <h1>Classic Tote Bag</h1>
+        <p class="subtitle">Spacious & Stylish</p>
 
-        <p class="subtitle">Spacious & Minimalist</p>
+        <img class="product-image" src="../tote-bag.jpg" alt="Classic luxury tote bag">
 
-        <!-- 2. Larger photo with alt text -->
-        <img class="product-image" 
-             src="../tote-bag.jpg" 
-             alt="Minimalist tan everyday tote bag">
-
-        <!-- 3. Full description -->
         <p class="description">
-            Meet your ultimate daily companion. The Everyday Tote Bag combines generous storage capacity with a sleek, minimalist aesthetic. Crafted from high-quality, durable materials, it features reinforced shoulder straps designed for comfortable carrying even on long, busy days.
+            A classic tote designed for both style and convenience. Spacious enough for your daily essentials while keeping your look elegant. Crafted from durable materials, it features reinforced shoulder straps designed for comfortable carrying even on long, busy days.
             <br><br>
-            Designed for versatile functionality, the main compartment easily holds a 13-inch laptop, planner, water bottle, makeup bag, and daily documents. An internal zip pocket keeps your smaller essentials like keys, cards, and lip balm secure and easy to find.
-            <br><br>
-            Whether you are heading to work, running errands around the city, or traveling for a weekend trip, this timeless tote bag seamlessly adapts to your busy lifestyle while keeping your outfit chic and pulled together.
+            Whether you are heading to work, running errands around the city, or traveling, this timeless tote bag seamlessly adapts to your busy lifestyle.
         </p>
 
         <h2>Product Specifications</h2>
 
-        <!-- 4. Details table with <th> headers -->
         <table>
             <tr>
                 <th>Category</th>
@@ -70,11 +59,67 @@
                 <th>Price Range</th>
                 <td>₱22,000.00</td>
             </tr>
-            <tr>
-                <th>Recommended Use</th>
-                <td>Work, Travel, & Casual Errands</td>
-            </tr>
         </table>
+
+        <!-- ORDER ENQUIRY FORM -->
+        <section class="order-enquiry-section">
+            <h2>Order Enquiry Form</h2>
+            <p class="order-subtitle">Interested in buying this bag? Fill out the details below to inquire.</p>
+
+            <form action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="tote-email">Email Address</label>
+                    <input type="email" id="tote-email" name="customer_email" placeholder="enter.your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tote-quantity">Quantity (1 to 20)</label>
+                    <input type="number" id="tote-quantity" name="quantity" min="1" max="20" value="1" required>
+                </div>
+
+                <fieldset>
+                    <legend>Preferred Delivery Option</legend>
+
+                    <div class="option-item">
+                        <input type="radio" id="tote-standard" name="delivery_method" value="standard" checked>
+                        <label for="tote-standard">Standard Shipping (3-5 Days)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="radio" id="tote-express" name="delivery_method" value="express">
+                        <label for="tote-express">Express Courier (Next Day)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="radio" id="tote-pickup" name="delivery_method" value="pickup">
+                        <label for="tote-pickup">Store Pick-up</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Optional Add-ons</legend>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="tote-wrap" name="extras" value="gift_wrap">
+                        <label for="tote-wrap">Include Luxury Gift Packaging (+₱150)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="tote-card" name="extras" value="personalized_card">
+                        <label for="tote-card">Add Personalized Greeting Card (+₱50)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="tote-dustbag" name="extras" value="dustbag_protector">
+                        <label for="tote-dustbag">Extra Dust Bag Protector (+₱100)</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Submit Order Enquiry</button>
+
+            </form>
+        </section>
 
         <div style="margin-top: 30px;">
             <a href="../index.html" class="btn-details">← Back to Home</a>
