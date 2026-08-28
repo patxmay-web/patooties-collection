@@ -240,6 +240,105 @@ td {
     background-color: #c8a96b;
 }
 
+/* Contact Page Specific Form Styling */
+.contact-title {
+    text-align: center;
+    color: #171717;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #5f574f;
+    margin-bottom: 30px;
+}
+
+fieldset {
+    border: 1px solid #c8a96b;
+    border-radius: 4px;
+    padding: 25px 30px;
+    margin-top: 20px;
+    background-color: #fdfbf7;
+    text-align: left;
+}
+
+legend {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    color: #806f5b;
+    padding: 0 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #171717;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c7aa;
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: #222222;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #806f5b;
+    box-shadow: 0 0 5px rgba(128, 111, 91, 0.4);
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #806f5b;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: #c8a96b;
+    outline: none;
+}
+
 /* Footer */
 footer {
     text-align: center;
