@@ -4,164 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contact Us - Patooties Collection</title>
-
-    <style>
-        body {
-            background-color: #f5f1eb;
-            font-family: Georgia, "Times New Roman", serif;
-            color: #222222;
-            margin: 0;
-            padding: 40px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-size: 52px;
-            letter-spacing: 4px;
-            color: #171717;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 18px;
-            letter-spacing: 1px;
-            color: #806f5b;
-            margin-bottom: 25px;
-        }
-
-        /* Navigation Styling */
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0 0;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        nav a {
-            font-family: Arial, sans-serif;
-            text-decoration: none;
-            color: #806f5b;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: #c8a96b;
-            border-bottom: 2px solid #c8a96b;
-            padding-bottom: 4px;
-        }
-
-        section {
-            background-color: #fffdf9;
-            border: 1px solid #c8a96b;
-            border-radius: 4px;
-            padding: 40px;
-            margin: 35px auto;
-            max-width: 650px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .contact-title {
-            text-align: center;
-            color: #171717;
-            font-size: 32px;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .contact-subtitle {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            color: #5f574f;
-            margin-bottom: 30px;
-        }
-
-        /* Form Styling */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: #171717;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d8c7aa;
-            background-color: #fdfbf7;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-            box-sizing: border-box;
-            color: #222222;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #c8a96b;
-        }
-
-        button {
-            width: 100%;
-            background-color: #c8a96b;
-            color: #ffffff;
-            border: none;
-            padding: 14px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #b08b4f;
-        }
-
-        footer {
-            text-align: center;
-            color: #806f5b;
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            section {
-                padding: 25px;
-            }
-        }
-    </style>
+    <!-- External CSS Style Link -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -173,33 +18,49 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section class="contact-section">
             <h2 class="contact-title">Get in Touch</h2>
             <p class="contact-subtitle">Have questions or inquiries? Send us a message below.</p>
 
             <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
-                </div>
+                <fieldset>
+                    <legend>Your details</legend>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    </div>
 
-                <button type="submit">Send Message</button>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="inquiry">Ask a Question about an Item</option>
+                            <option value="suggest">Suggest a Bag / Brand</option>
+                            <option value="correction">Correct Item Details</option>
+                            <option value="other">Something Else</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+
+                    <button type="submit">Send message</button>
+                </fieldset>
             </form>
         </section>
     </main>
