@@ -240,7 +240,7 @@ td {
     background-color: #c8a96b;
 }
 
-/* Contact Page Specific Form Styling */
+/* Contact Page Form Styling */
 .contact-title {
     text-align: center;
     color: #171717;
@@ -319,13 +319,12 @@ textarea:focus {
 
 button[type="submit"] {
     width: 100%;
-    background-color: #806f5b;
+    background-color: #c8a96b;
     color: #ffffff;
     border: none;
     padding: 14px;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
@@ -335,7 +334,7 @@ button[type="submit"] {
 
 button[type="submit"]:hover,
 button[type="submit"]:focus {
-    background-color: #c8a96b;
+    background-color: #b08b4f;
     outline: none;
 }
 
