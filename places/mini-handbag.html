@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chic Mini Handbag - Patooties Collection</title>
-    <!-- Relative link papuntang root style.css -->
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -14,7 +13,6 @@
     <header>
         <nav>
             <ul>
-                <!-- Path trap fix: gamit ang ../ para sa main root navigation -->
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
                 <li><a href="../contact.html">Contact Us</a></li>
@@ -23,28 +21,19 @@
     </header>
 
     <main class="product-page">
-        <!-- 1. Name in H1 -->
         <h1>Chic Mini Handbag</h1>
-
         <p class="subtitle">Compact & Stylish Accent</p>
 
-        <!-- 2. Larger photo with alt text -->
-        <img class="product-image" 
-             src="../mini-handbag.jpg" 
-             alt="Chic and compact mini handbag">
+        <img class="product-image" src="../mini-handbag.jpg" alt="Chic and compact mini handbag">
 
-        <!-- 3. Full description -->
         <p class="description">
             Small in size but big on style! The Chic Mini Handbag is designed for those moments when you want to carry just the essentials without compromising your aesthetic. Featuring a structured top handle and fine gold-tone accents, this piece adds an instant pop of sophistication to any outfit.
             <br><br>
             Despite its petite silhouette, the interior is cleverly proportioned to fit a smartphone, cardholder, keys, lipstick, and airpods. It comes with a detachable long strap, allowing you to carry it as a refined top-handle bag or wear it casually as a crossbody.
-            <br><br>
-            Whether paired with a casual weekend dress or an elegant evening ensemble, this mini handbag offers a playful yet highly polished statement for any fashion lover.
         </p>
 
         <h2>Product Specifications</h2>
 
-        <!-- 4. Details table with <th> headers -->
         <table>
             <tr>
                 <th>Category</th>
@@ -70,11 +59,67 @@
                 <th>Price Range</th>
                 <td>₱12,500.00</td>
             </tr>
-            <tr>
-                <th>Recommended Use</th>
-                <td>Evening Events & Light Outings</td>
-            </tr>
         </table>
+
+        <!-- ORDER ENQUIRY FORM -->
+        <section class="order-enquiry-section">
+            <h2>Order Enquiry Form</h2>
+            <p class="order-subtitle">Interested in buying this bag? Fill out the details below to inquire.</p>
+
+            <form action="#" method="POST">
+                
+                <div class="form-group">
+                    <label for="mini-email">Email Address</label>
+                    <input type="email" id="mini-email" name="customer_email" placeholder="enter.your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mini-quantity">Quantity (1 to 20)</label>
+                    <input type="number" id="mini-quantity" name="quantity" min="1" max="20" value="1" required>
+                </div>
+
+                <fieldset>
+                    <legend>Preferred Delivery Option</legend>
+
+                    <div class="option-item">
+                        <input type="radio" id="mini-standard" name="delivery_method" value="standard" checked>
+                        <label for="mini-standard">Standard Shipping (3-5 Days)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="radio" id="mini-express" name="delivery_method" value="express">
+                        <label for="mini-express">Express Courier (Next Day)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="radio" id="mini-pickup" name="delivery_method" value="pickup">
+                        <label for="mini-pickup">Store Pick-up</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Optional Add-ons</legend>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="mini-wrap" name="extras" value="gift_wrap">
+                        <label for="mini-wrap">Include Luxury Gift Packaging (+₱150)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="mini-card" name="extras" value="personalized_card">
+                        <label for="mini-card">Add Personalized Greeting Card (+₱50)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="mini-dustbag" name="extras" value="dustbag_protector">
+                        <label for="mini-dustbag">Extra Dust Bag Protector (+₱100)</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Submit Order Enquiry</button>
+
+            </form>
+        </section>
 
         <div style="margin-top: 30px;">
             <a href="../index.html" class="btn-details">← Back to Home</a>

@@ -85,6 +85,68 @@
             </tr>
         </table>
 
+        <!-- MODULE 4: ORDER ENQUIRY FORM -->
+        <section class="order-enquiry-section">
+            <h2>Order Enquiry</h2>
+            <p class="order-subtitle">Interested in ordering this item? Fill out the details below to inquire.</p>
+
+            <form action="#" method="POST">
+                <!-- Contact Email -->
+                <div class="form-group">
+                    <label for="customer-email">Email Address</label>
+                    <input type="email" id="customer-email" name="customer_email" placeholder="Your Email Address" required>
+                </div>
+
+                <!-- Quantity Input (1 - 20) -->
+                <div class="form-group">
+                    <label for="quantity">Quantity (1 - 20)</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="20" value="1" required>
+                </div>
+
+                <!-- Delivery Method (Radio buttons inside Fieldset) -->
+                <fieldset>
+                    <legend>Preferred Delivery Method</legend>
+                    
+                    <div class="option-item">
+                        <input type="radio" id="delivery-standard" name="delivery_method" value="standard" checked>
+                        <label for="delivery-standard">Standard Shipping (3-5 Days)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="radio" id="delivery-express" name="delivery_method" value="express">
+                        <label for="delivery-express">Express Delivery (Next Day)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="radio" id="delivery-pickup" name="delivery_method" value="pickup">
+                        <label for="delivery-pickup">Store Pickup</label>
+                    </div>
+                </fieldset>
+
+                <!-- Optional Extras (Checkboxes with same name) -->
+                <fieldset>
+                    <legend>Optional Extras</legend>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="extra-gift" name="extras" value="gift_wrap">
+                        <label for="extra-gift">Include Premium Gift Wrapping (+₱150)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="extra-card" name="extras" value="custom_card">
+                        <label for="extra-card">Add Personalized Gift Card (+₱50)</label>
+                    </div>
+
+                    <div class="option-item">
+                        <input type="checkbox" id="extra-dustbag" name="extras" value="extra_dustbag">
+                        <label for="extra-dustbag">Include Dust Bag Protector (+₱100)</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" style="margin-top: 20px;">Submit Order Enquiry</button>
+            </form>
+        </section>
+
         <div style="margin-top: 30px;">
             <a href="../index.html" class="btn-details">← Back to Collection</a>
         </div>

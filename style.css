@@ -1,76 +1,177 @@
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+    --brand-color: #806f5b;
+    --dark-ink: #171717;
+    --muted-grey: #5f574f;
+    --light-background: #f5f1eb;
+    --gold-accent: #c8a96b;
+    --card-background: #fffdf9;
+}
+
+
+/* =========================================================
+   2. BASE STYLES
+   ========================================================= */
+
+/* Apply border-box sizing to all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #f5f1eb;
-    font-family: Georgia, "Times New Roman", serif;
-    color: #222222;
     margin: 0;
     padding: 40px;
+    background-color: var(--light-background);
+    color: var(--dark-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
 }
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--brand-color);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   3. LAYOUT REGIONS
+   ========================================================= */
+
+/* Header */
 
 header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-h1 {
+header h1 {
     font-size: 52px;
     letter-spacing: 4px;
-    color: #171717;
-    margin-bottom: 10px;
+    color: var(--dark-ink);
+    margin: 0 0 10px;
 }
 
 .tagline {
     font-size: 18px;
     letter-spacing: 1px;
-    color: #806f5b;
-    margin-bottom: 25px;
+    color: var(--brand-color);
+    margin: 0 0 25px;
 }
 
-/* Navigation Styling */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
+
+/* Main */
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-nav a {
-    font-family: Arial, sans-serif;
-    text-decoration: none;
-    color: #806f5b;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: color 0.3s;
-}
 
-nav a:hover, nav a.active {
-    color: #c8a96b;
-    border-bottom: 2px solid #c8a96b;
-    padding-bottom: 4px;
-}
+/* General Sections */
 
-/* Section Containers */
-section, main, main.product-page {
-    background-color: #fffdf9;
-    border: 1px solid #c8a96b;
+section {
+    background-color: var(--card-background);
+    border: 1px solid var(--gold-accent);
     border-radius: 4px;
     padding: 40px;
     margin: 35px auto;
     max-width: 800px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    color: var(--brand-color);
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   4. NAVIGATION
+   ========================================================= */
+
+nav {
     text-align: center;
 }
 
+nav ul {
+    /* Remove default list styling */
+    list-style: none;
+
+    /* Remove default padding */
+    padding: 0;
+
+    margin: 20px 0 0;
+}
+
+nav li {
+    /* Make navigation items horizontal */
+    display: inline-block;
+
+    margin: 0 12px;
+}
+
+nav a {
+    /* Remove default link underline */
+    text-decoration: none;
+
+    color: var(--brand-color);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    transition: color 0.3s, border-color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--gold-accent);
+    border-bottom: 2px solid var(--gold-accent);
+    padding-bottom: 4px;
+}
+
+
+/* =========================================================
+   5. HOME PAGE
+   ========================================================= */
+
 /* Owner Section */
+
 .owner {
     text-align: center;
 }
 
 .owner h2 {
-    color: #1d1d1d;
+    color: var(--dark-ink);
     font-size: 32px;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -80,7 +181,7 @@ section, main, main.product-page {
     font-family: Arial, sans-serif;
     font-size: 17px;
     line-height: 1.8;
-    color: #5f574f;
+    color: var(--muted-grey);
     max-width: 750px;
     margin: 0 auto 30px;
 }
@@ -90,14 +191,17 @@ section, main, main.product-page {
     height: 190px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #c8a96b;
+    border: 3px solid var(--gold-accent);
     padding: 5px;
+    margin: 0 auto;
 }
 
-/* Collection Section */
+
+/* Collection Title */
+
 .collection-title {
     text-align: center;
-    color: #171717;
+    color: var(--dark-ink);
     font-size: 36px;
     letter-spacing: 3px;
     margin-bottom: 40px;
@@ -108,38 +212,49 @@ section, main, main.product-page {
     display: block;
     width: 70px;
     height: 2px;
-    background-color: #c8a96b;
+    background-color: var(--gold-accent);
     margin: 15px auto;
 }
 
+
+/* Product Cards */
+
 .product {
-    background-color: #fdfbf7;
-    border: 1px solid #d8c7aa;
+    background-color: var(--card-background);
+    border: 1px solid var(--gold-accent);
     padding: 30px;
     margin: 30px auto;
     max-width: 520px;
     text-align: center;
+    border-radius: 4px;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
 }
 
 .product h3 {
-    color: #222222;
+    color: var(--dark-ink);
     font-size: 27px;
     letter-spacing: 1px;
-    margin-bottom: 8px;
+    margin: 0 0 8px;
 }
 
 .product h4 {
-    color: #b08b4f;
+    color: var(--brand-color);
     font-family: Arial, sans-serif;
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 }
 
 .product p {
     font-family: Arial, sans-serif;
-    color: #665f58;
+    color: var(--muted-grey);
     font-size: 16px;
     line-height: 1.7;
 }
@@ -148,15 +263,62 @@ section, main, main.product-page {
     width: 260px;
     height: 260px;
     object-fit: cover;
-    margin-top: 20px;
-    margin-bottom: 25px;
-    border: 1px solid #d8c7aa;
+    margin: 20px auto 25px;
+    border: 1px solid var(--gold-accent);
 }
 
-/* Product Details Page Styles */
+
+/* =========================================================
+   6. BUTTONS AND LINKS
+   ========================================================= */
+
+.btn-details {
+    display: inline-block;
+
+    font-family: Arial, sans-serif;
+    background-color: var(--brand-color);
+    color: #ffffff;
+
+    padding: 10px 20px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    border-radius: 3px;
+
+    transition: background-color 0.3s;
+}
+
+.btn-details:hover {
+    background-color: var(--gold-accent);
+}
+
+
+/* =========================================================
+   7. PRODUCT DETAIL PAGES
+   ========================================================= */
+
+main.product-page {
+    width: 100%;
+    max-width: 800px;
+    margin: 35px auto;
+
+    background-color: var(--card-background);
+    border: 1px solid var(--gold-accent);
+    border-radius: 4px;
+
+    padding: 40px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
 .subtitle {
     font-family: Arial, sans-serif;
-    color: #b0884b;
+    color: var(--brand-color);
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -169,81 +331,78 @@ section, main, main.product-page {
     max-width: 420px;
     height: auto;
     object-fit: cover;
-    border: 1px solid #d8c7aa;
-    margin: 20px 0 30px;
+
+    border: 1px solid var(--gold-accent);
+
+    margin: 20px auto 30px;
 }
 
 .description {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.8;
-    color: #5f574f;
+    color: var(--muted-grey);
+
     max-width: 680px;
     margin: 0 auto 35px;
+
     text-align: justify;
 }
 
 h2 {
     font-size: 26px;
-    color: #171717;
+    color: var(--dark-ink);
     letter-spacing: 1px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-/* Specification Tables */
+
+/* =========================================================
+   8. SPECIFICATION TABLES
+   ========================================================= */
+
 table {
     width: 100%;
     max-width: 600px;
     margin: 0 auto 20px;
+
     border-collapse: collapse;
+
     font-family: Arial, sans-serif;
 }
 
-th, td {
-    border: 1px solid #d8c7aa;
+th,
+td {
+    border: 1px solid var(--gold-accent);
     padding: 12px 16px;
     text-align: left;
 }
 
 th {
-    background-color: #fdfbf7;
-    color: #806f5b;
+    background-color: var(--light-background);
+    color: var(--brand-color);
+
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 1px;
+
     width: 35%;
 }
 
 td {
-    color: #333333;
+    color: var(--dark-ink);
     font-size: 15px;
 }
 
-/* Buttons and Links */
-.btn-details {
-    display: inline-block;
-    font-family: Arial, sans-serif;
-    background-color: #806f5b;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-}
 
-.btn-details:hover {
-    background-color: #c8a96b;
-}
+/* =========================================================
+   9. CONTACT PAGE AND FORMS
+   ========================================================= */
 
-/* Contact Page Specific Form Styling */
 .contact-title {
     text-align: center;
-    color: #171717;
+    color: var(--dark-ink);
     font-size: 32px;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -251,27 +410,37 @@ td {
 
 .contact-subtitle {
     text-align: center;
+
     font-family: Arial, sans-serif;
     font-size: 15px;
-    color: #5f574f;
+
+    color: var(--muted-grey);
+
     margin-bottom: 30px;
 }
 
 fieldset {
-    border: 1px solid #c8a96b;
+    border: 1px solid var(--gold-accent);
     border-radius: 4px;
+
     padding: 25px 30px;
     margin-top: 20px;
-    background-color: #fdfbf7;
+
+    background-color: var(--light-background);
+
     text-align: left;
 }
 
 legend {
     font-family: Georgia, serif;
     font-weight: bold;
-    color: #806f5b;
+
+    color: var(--brand-color);
+
     padding: 0 10px;
+
     font-size: 16px;
+
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -283,13 +452,19 @@ legend {
 
 label {
     display: block;
+
     font-family: Arial, sans-serif;
     font-size: 13px;
-    color: #171717;
+
+    color: var(--dark-ink);
+
     margin-bottom: 8px;
+
     text-transform: uppercase;
     letter-spacing: 1px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
@@ -299,14 +474,20 @@ input[type="number"],
 select,
 textarea {
     width: 100%;
+
     padding: 12px;
-    border: 1px solid #d8c7aa;
+
+    border: 1px solid var(--gold-accent);
+
     background-color: #ffffff;
+
     border-radius: 4px;
+
     font-family: Arial, sans-serif;
     font-size: 15px;
-    box-sizing: border-box;
-    color: #222222;
+
+    color: var(--dark-ink);
+
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -314,67 +495,99 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #806f5b;
+
+    border-color: var(--brand-color);
+
     box-shadow: 0 0 5px rgba(128, 111, 91, 0.4);
 }
 
 button[type="submit"] {
     width: 100%;
-    background-color: #806f5b;
+
+    background-color: var(--brand-color);
     color: #ffffff;
+
     border: none;
+
     padding: 14px;
+
     font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
+
     letter-spacing: 2px;
     text-transform: uppercase;
+
     cursor: pointer;
+
     border-radius: 4px;
+
     transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover,
 button[type="submit"]:focus {
-    background-color: #c8a96b;
+    background-color: var(--gold-accent);
     outline: none;
 }
 
-/* Order Enquiry Form Specific Styling (Fixed to override section styling) */
+
+/* =========================================================
+   10. ORDER ENQUIRY FORM
+   ========================================================= */
+
 .order-enquiry-section {
     background-color: transparent !important;
+
     border: none !important;
-    border-top: 2px dashed #c8a96b !important;
+    border-top: 2px dashed var(--gold-accent) !important;
+
     border-radius: 0 !important;
-    box-init: none !important;
+
     box-shadow: none !important;
+
     padding: 30px 0 0 0 !important;
+
     margin: 40px auto 0 auto !important;
+
     max-width: 100% !important;
+
     text-align: left !important;
 }
 
 .order-subtitle {
     font-family: Arial, sans-serif;
+
     font-size: 15px;
-    color: #5f574f;
+
+    color: var(--muted-grey);
+
     margin-bottom: 25px;
+
     text-align: left;
 }
 
 .option-item {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
     margin-bottom: 12px;
 }
 
 .option-item label {
     margin-bottom: 0;
+
     font-weight: normal;
+
     text-transform: none;
+
     letter-spacing: 0;
+
     font-size: 15px;
+
     text-align: left;
 }
 
@@ -382,31 +595,64 @@ button[type="submit"]:focus {
 .option-item input[type="checkbox"] {
     width: 18px;
     height: 18px;
+
     cursor: pointer;
-    accent-color: #806f5b;
+
+    accent-color: var(--brand-color);
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    color: #806f5b;
-    margin-top: 50px;
-    padding: 20px;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
 
-/* Mobile Responsiveness */
+/* =========================================================
+   11. RESPONSIVE DESIGN
+   ========================================================= */
+
 @media (max-width: 600px) {
+
     body {
         padding: 20px;
     }
 
-    section, main, main.product-page {
+    header h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    nav li {
+        margin: 5px 7px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    section,
+    main.product-page {
         padding: 20px;
     }
 
-    h1 {
-        font-size: 32px;
+    .collection-title {
+        font-size: 28px;
+    }
+
+    .product {
+        padding: 20px;
+    }
+
+    .product img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .owner img {
+        width: 150px;
+        height: 150px;
+    }
+
+    fieldset {
+        padding: 20px;
     }
 }
