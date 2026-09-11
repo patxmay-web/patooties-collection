@@ -190,18 +190,18 @@ nav a.active {
     margin: 15px auto;
 }
 
-/* 📦 Product Cards (Class .product-card required by assignment) */
+/* 📦 Product Cards */
 .product-card {
     background-color: var(--card-background);
     border: 1px solid var(--gold-accent);
-    border-left: 5px solid var(--brand-color); /* Coloured left border using brand variable */
-    padding: 24px;                             /* Padding of at least 16px */
-    margin-bottom: 25px;                       /* margin-bottom so cards don't touch */
+    border-left: 5px solid var(--brand-color);
+    padding: 24px;
+    margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
     max-width: 520px;
     text-align: center;
-    border-radius: 6px;                        /* border-radius */
+    border-radius: 6px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -211,8 +211,8 @@ nav a.active {
 }
 
 .product-card h3 {
-    color: var(--dark-ink);                    /* Distinct color */
-    font-size: 27px;                           /* Distinct font-size */
+    color: var(--dark-ink);
+    font-size: 27px;
     letter-spacing: 1px;
     margin: 0 0 8px;
 }
@@ -273,7 +273,7 @@ nav a.active {
 fieldset {
     border: 1px solid var(--gold-accent);
     border-radius: 4px;
-    padding: 25px 30px;                       /* Fieldset padding */
+    padding: 25px 30px;
     margin-top: 20px;
     background-color: var(--light-background);
     text-align: left;
@@ -282,7 +282,7 @@ fieldset {
 legend {
     font-family: Georgia, serif;
     font-weight: bold;
-    color: var(--brand-color);                /* Styled legend using brand colour */
+    color: var(--brand-color);
     padding: 0 10px;
     font-size: 16px;
     text-transform: uppercase;
@@ -312,7 +312,7 @@ input[type="number"],
 select,
 textarea {
     width: 100%;
-    padding: 12px;                            /* Consistent padding on inputs and textarea */
+    padding: 12px;
     border: 1px solid var(--gold-accent);
     background-color: #ffffff;
     border-radius: 4px;
@@ -322,27 +322,25 @@ textarea {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Visible Focus State (Lesson 4.6 Requirement) */
 input:focus,
 select:focus,
 textarea:focus {
-    outline: 3px solid var(--brand-color);    /* Visible focus state using brand color */
+    outline: 3px solid var(--brand-color);
     outline-offset: 2px;
 }
 
-/* Styled Submit Button */
 button[type="submit"] {
     width: 100%;
-    background-color: var(--brand-color);     /* Background colour */
-    color: #ffffff;                           /* 4.5:1 Contrast ratio passed */
-    border: none;                             /* No default border */
-    padding: 14px;                            /* Padding */
+    background-color: var(--brand-color);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
     font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    cursor: pointer;                          /* cursor: pointer */
+    cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s;
 }
@@ -356,7 +354,104 @@ button[type="submit"]:focus {
 
 
 /* =========================================================
-   8. RESPONSIVE DESIGN
+   8. PRODUCT DETAIL PAGES (SPECIFICATIONS & FORMS)
+   ========================================================= */
+
+.product-page {
+    background-color: var(--card-background);
+    border: 1px solid var(--gold-accent);
+    padding: 40px;
+    border-radius: 6px;
+    margin: 35px auto;
+}
+
+.product-page h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--dark-ink);
+}
+
+.subtitle {
+    font-family: Arial, sans-serif;
+    color: var(--brand-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--gold-accent);
+    margin: 20px auto;
+}
+
+.description {
+    font-family: Arial, sans-serif;
+    color: var(--muted-grey);
+    line-height: 1.7;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 40px;
+    font-family: Arial, sans-serif;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0d8ce;
+}
+
+table th {
+    background-color: var(--light-background);
+    color: var(--dark-ink);
+    width: 35%;
+    font-weight: bold;
+}
+
+table td {
+    color: var(--muted-grey);
+}
+
+/* Radio & Checkbox Alignments */
+.order-enquiry-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--light-background);
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.option-item label {
+    margin-bottom: 0;
+    font-weight: normal;
+    text-transform: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   9. RESPONSIVE DESIGN
    ========================================================= */
 
 @media (max-width: 600px) {
