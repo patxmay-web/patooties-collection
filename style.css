@@ -21,7 +21,7 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* Crucial to prevent horizontal scrolling on mobile */
+    box-sizing: border-box;
 }
 
 html {
@@ -79,72 +79,26 @@ textarea {
 
 
 /* =========================================================
-   3. MOBILE-FIRST GRID SKELETON (MODULE 7.1 & 7.2 / 7.3 & 7.4)
+   3. LAYOUT REGIONS (MODULE 6.1 FLEXBOX HEADER)
    ========================================================= */
 
-/* Base Layout: Mobile (Single Column, everything stacked) */
-.page {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "masthead"
-        "main"
-        "side"
-        "foot";
-    gap: 16px;
-    padding: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Grid Area Assignments */
-header { 
-    grid-area: masthead; 
-}
-
-aside { 
-    grid-area: side; 
-}
-
-main { 
-    grid-area: main; 
-}
-
-footer { 
-    grid-area: foot; 
-}
-
-/* Responsive Desktop Layout (min-width: 700px) */
-@media (min-width: 700px) {
-    .page {
-        grid-template-columns: 220px 1fr;
-        grid-template-areas:
-            "masthead masthead"
-            "side     main"
-            "foot     foot";
-        gap: 24px;
-        padding: 24px;
-    }
-}
-
-
-/* =========================================================
-   4. COMPONENT STYLES (HEADER & SIDEBAR)
-   ========================================================= */
-
-/* Flexbox Header from Module 6 */
+/* ↔️ Module 6.1: Flexbox Header */
+.site-header,
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 30px;
+    justify-content: space-between; /* Space out title and nav */
+    align-items: center;            /* Vertical alignment */
+    padding: 25px 60px;
     background-color: var(--card-background);
-    border: 1px solid var(--gold-accent);
-    border-radius: 6px;
-    box-shadow: var(--shadow-soft);
+    border-bottom: 1px solid var(--gold-accent);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1 {
+header h1,
+.site-header h1 {
     font-size: 26px;
     letter-spacing: 3px;
     color: var(--dark-ink);
@@ -161,79 +115,57 @@ header h1 {
     font-style: italic;
 }
 
-/* Sidebar Styles */
-aside {
+main {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
     background-color: var(--card-background);
     border: 1px solid var(--gold-accent);
     border-radius: 6px;
-    padding: 25px;
+    padding: 40px;
+    margin: 35px auto;
+    max-width: 850px;
     box-shadow: var(--shadow-soft);
+    transition: box-shadow 0.3s ease;
 }
 
-aside h2 {
-    font-size: 18px;
-    color: var(--dark-ink);
-    border-bottom: 1px solid var(--gold-accent);
-    padding-bottom: 8px;
-    margin-top: 0;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-aside ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 25px 0;
-}
-
-aside li {
-    margin-bottom: 10px;
-}
-
-aside a {
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: var(--brand-color);
-    transition: color 0.3s;
-}
-
-aside a:hover {
-    color: var(--gold-accent);
-}
-
-aside p {
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    color: var(--muted-grey);
-    line-height: 1.6;
-}
-
-/* Footer Styling */
 footer {
     text-align: center;
     color: var(--brand-color);
-    padding: 25px;
+    margin-top: 60px;
+    padding: 30px;
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    border: 1px solid var(--gold-accent);
-    border-radius: 6px;
+    border-top: 1px solid var(--gold-accent);
     background-color: var(--card-background);
-    box-shadow: var(--shadow-soft);
 }
 
 
 /* =========================================================
-   5. NAVIGATION
+   4. NAVIGATION (MODULE 6.1 FLEXBOX NAV)
    ========================================================= */
 
-nav ul {
-    display: flex;
-    gap: 24px;
+nav {
+    text-align: right;
+}
+
+/* ↔️ Module 6.1: Flexbox nav ul with gap */
+nav ul,
+.site-header nav ul {
+    display: flex;          /* Flex container for items */
+    gap: 24px;              /* Spacing between links */
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+nav li {
+    margin: 0;             /* Removed inline-block and margins */
 }
 
 nav a {
@@ -249,6 +181,7 @@ nav a {
     transition: color 0.3s ease;
 }
 
+/* Luxury Animated Underline */
 nav a::after {
     content: "";
     position: absolute;
@@ -272,24 +205,23 @@ nav a.active::after {
 
 
 /* =========================================================
-   6. OWNER SECTION & PRODUCT GRID
+   5. HOME PAGE, OWNER SECTION & PRODUCT GRID (MODULE 6.2)
    ========================================================= */
 
-main section {
-    background-color: var(--card-background);
-    border: 1px solid var(--gold-accent);
-    border-radius: 6px;
-    padding: 30px;
-    margin-bottom: 24px;
-    box-shadow: var(--shadow-soft);
-}
-
+/* 🎯 Module 6.1: Flexbox Horizontal & Vertical Centering */
 .owner {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Vertical Centering */
+    align-items: center;     /* Horizontal Centering */
+    min-height: 380px;       /* Set height for vertical centering space */
     text-align: center;
+    background-color: var(--card-background);
+    border-radius: 6px;
+    border: 1px solid var(--gold-accent);
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-soft);
 }
 
 .owner h2 {
@@ -324,7 +256,6 @@ main section {
     color: var(--dark-ink);
     font-size: 34px;
     letter-spacing: 3px;
-    margin-top: 0;
     margin-bottom: 40px;
 }
 
@@ -337,19 +268,20 @@ main section {
     margin: 15px auto 0;
 }
 
-/* Flexbox Product Grid (Module 6.2 preserved) */
+/* ↔️ Module 6.2: Flexbox Product Grid Container */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
 }
 
+/* 📦 Module 6.2: Responsive Product Cards */
 .product-card {
     flex: 1 1 240px;
     background-color: var(--card-background);
     border: 1px solid var(--gold-accent);
     border-left: 6px solid var(--brand-color);
-    padding: 25px;
+    padding: 30px;
     text-align: center;
     border-radius: 6px;
     box-shadow: var(--shadow-soft);
@@ -363,7 +295,7 @@ main section {
 
 .product-card h3 {
     color: var(--dark-ink);
-    font-size: 22px;
+    font-size: 26px;
     letter-spacing: 1px;
     margin: 0 0 8px;
 }
@@ -371,25 +303,25 @@ main section {
 .product-card h4 {
     color: var(--brand-color);
     font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin: 0 0 15px;
+    margin: 0 0 20px;
 }
 
 .product-card p {
     font-family: Arial, sans-serif;
     color: var(--muted-grey);
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 .product-card img {
     width: 100%;
-    max-width: 220px;
-    height: 220px;
+    max-width: 260px;
+    height: 260px;
     object-fit: cover;
-    margin: 15px auto 20px;
+    margin: 20px auto 25px;
     border: 1px solid var(--gold-accent);
     border-radius: 4px;
     transition: transform 0.4s ease;
@@ -401,7 +333,7 @@ main section {
 
 
 /* =========================================================
-   7. BUTTONS & ACCESSIBILITY
+   6. BUTTONS AND LINKS
    ========================================================= */
 
 .btn-details {
@@ -409,9 +341,9 @@ main section {
     font-family: Arial, sans-serif;
     background-color: var(--brand-color);
     color: #ffffff;
-    padding: 12px 20px;
+    padding: 12px 24px;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -428,18 +360,259 @@ main section {
 
 
 /* =========================================================
-   8. MOBILE RESPONSIVE ADJUSTMENTS FOR COMPONENTS
+   7. FORM STYLES & ACCESSIBLE FOCUS
    ========================================================= */
 
-@media (max-width: 699px) {
+fieldset {
+    border: 1px solid var(--gold-accent);
+    border-radius: 6px;
+    padding: 30px;
+    margin-top: 25px;
+    background-color: var(--light-background);
+    text-align: left;
+}
+
+legend {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    color: var(--brand-color);
+    padding: 0 12px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background-color: var(--card-background);
+    border: 1px solid var(--gold-accent);
+    border-radius: 3px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: var(--dark-ink);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--gold-accent);
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--dark-ink);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 2px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--brand-color);
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: var(--gold-accent);
+    outline: 3px solid var(--brand-color);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   8. PRODUCT DETAIL PAGES (SPECIFICATIONS & FORMS)
+   ========================================================= */
+
+.product-page {
+    background-color: var(--card-background);
+    border: 1px solid var(--gold-accent);
+    padding: 45px;
+    border-radius: 6px;
+    margin: 35px auto;
+    box-shadow: var(--shadow-soft);
+}
+
+.product-page h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--dark-ink);
+}
+
+.subtitle {
+    font-family: Arial, sans-serif;
+    color: var(--brand-color);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid var(--gold-accent);
+    margin: 25px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.description {
+    font-family: Arial, sans-serif;
+    color: var(--muted-grey);
+    line-height: 1.8;
+}
+
+/* Enhanced Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0 40px;
+    font-family: Arial, sans-serif;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e0d8ce;
+}
+
+table th {
+    background-color: var(--light-background);
+    color: var(--dark-ink);
+    width: 35%;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+table tr:hover td {
+    background-color: #faf7f2;
+}
+
+table td {
+    color: var(--muted-grey);
+    font-size: 14px;
+}
+
+/* Radio & Checkbox Alignments */
+.order-enquiry-section {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid var(--light-background);
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: var(--brand-color); /* Matches theme color for inputs */
+}
+
+.option-item label {
+    margin-bottom: 0;
+    font-weight: normal;
+    text-transform: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   9. RESPONSIVE DESIGN (FLEXBOX ADJUSTMENTS)
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .site-header,
     header {
-        flex-direction: column;
+        flex-direction: column; /* Stacks header elements on mobile */
         gap: 15px;
+        padding: 20px;
         text-align: center;
     }
 
-    nav ul {
+    nav ul,
+    .site-header nav ul {
         gap: 15px;
         justify-content: center;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    section,
+    .product-page {
+        padding: 25px;
+    }
+
+    .collection-title {
+        font-size: 26px;
+    }
+
+    .product-card img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .owner img {
+        width: 140px;
+        height: 140px;
+    }
+
+    fieldset {
+        padding: 20px;
     }
 }
