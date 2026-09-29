@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Viewport Meta Tag Required for Tasks 7.2 & 7.4 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patooties Collection</title>
     <link rel="stylesheet" href="style.css">
@@ -10,83 +11,112 @@
 
 <body>
 
-    <header>
-        <h1>Patooties Collection</h1>
-        <p class="tagline">Timeless luxury bags, carefully curated for every occasion.</p>
-        
-        <nav>
+    <!-- CSS Grid Page Skeleton Container -->
+    <div class="page">
+
+        <!-- Masthead Region -->
+        <header>
+            <div>
+                <h1>Patooties Collection</h1>
+                <p class="tagline">Timeless luxury bags, carefully curated for every occasion.</p>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Sidebar Region (Required for Tasks 7.1 & 7.3) -->
+        <aside>
+            <h2>Categories</h2>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#">Shoulder Bags</a></li>
+                <li><a href="#">Mini Handbags</a></li>
+                <li><a href="#">Tote Bags</a></li>
             </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="owner">
-            <h2>Patricia May</h2>
-            <p>
-                Hi! I'm Patricia, a college student who loves fashion and beautiful
-                things. I created Patooties Collection to share carefully selected
-                luxury bags with people who appreciate timeless style.
-            </p>
-            <img src="owner.jpg" alt="Photo of Patricia May">
-        </section>
+            <h2>Why Shop With Us</h2>
+            <p>100% authentic luxury items, carefully inspected and delivered with premium care.</p>
+            
+            <h2>Customer Support</h2>
+            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+        </aside>
 
-        <section>
-            <h2 class="collection-title">Our Collection</h2>
-
-            <!-- Bag 1: Classic Shoulder Bag -->
-            <div class="product-card">
-                <h3>Classic Shoulder Bag</h3>
-                <h4>Elegant Everyday Style</h4>
+        <!-- Main Region -->
+        <main>
+            <section class="owner">
+                <h2>Patricia May</h2>
                 <p>
-                    A timeless shoulder bag that adds a touch of elegance to any
-                    outfit. Perfect for everyday use and special occasions.
+                    Hi! I'm Patricia, a college student who loves fashion and beautiful
+                    things. I created Patooties Collection to share carefully selected
+                    luxury bags with people who appreciate timeless style.
                 </p>
-                <img src="shoulder-bag.jpg" alt="Classic luxury shoulder bag">
-                <div>
-                    <a href="places/shoulder-bag.html" class="btn-details">View Details →</a>
-                </div>
-            </div>
+                <img src="owner.jpg" alt="Photo of Patricia May">
+            </section>
 
-            <!-- Bag 2: Mini Handbag -->
-            <div class="product-card">
-                <h3>Mini Handbag</h3>
-                <h4>Simple and Chic</h4>
-                <p>
-                    A stylish mini handbag for those who love a simple and
-                    sophisticated look. Perfect for carrying your everyday
-                    essentials.
-                </p>
-                <img src="mini-handbag.jpg" alt="Small elegant handbag">
-                <div>
-                    <a href="places/mini-handbag.html" class="btn-details">View Details →</a>
-                </div>
-            </div>
+            <section>
+                <h2 class="collection-title">Our Collection</h2>
 
-            <!-- Bag 3: Classic Tote Bag -->
-            <div class="product-card">
-                <h3>Classic Tote Bag</h3>
-                <h4>Spacious and Stylish</h4>
-                <p>
-                    A classic tote designed for both style and convenience.
-                    Spacious enough for your daily essentials while keeping
-                    your look elegant.
-                </p>
-                <img src="tote-bag.jpg" alt="Classic luxury tote bag">
-                <div>
-                    <a href="places/tote-bag.html" class="btn-details">View Details →</a>
-                </div>
-            </div>
-        </section>
-    </main>
+                <!-- Product Grid using Flexbox / Responsive Columns -->
+                <div class="product-grid">
+                    <!-- Bag 1: Classic Shoulder Bag -->
+                    <div class="product-card">
+                        <h3>Classic Shoulder Bag</h3>
+                        <h4>Elegant Everyday Style</h4>
+                        <p>
+                            A timeless shoulder bag that adds a touch of elegance to any
+                            outfit. Perfect for everyday use and special occasions.
+                        </p>
+                        <img src="shoulder-bag.jpg" alt="Classic luxury shoulder bag">
+                        <div>
+                            <a href="places/shoulder-bag.html" class="btn-details">View Details →</a>
+                        </div>
+                    </div>
 
-    <footer>
-        <p>© 2026 Patooties Collection</p>
-        <p>Elegance in every detail.</p>
-    </footer>
+                    <!-- Bag 2: Mini Handbag -->
+                    <div class="product-card">
+                        <h3>Mini Handbag</h3>
+                        <h4>Simple and Chic</h4>
+                        <p>
+                            A stylish mini handbag for those who love a simple and
+                            sophisticated look. Perfect for carrying your everyday
+                            essentials.
+                        </p>
+                        <img src="mini-handbag.jpg" alt="Small elegant handbag">
+                        <div>
+                            <a href="places/mini-handbag.html" class="btn-details">View Details →</a>
+                        </div>
+                    </div>
+
+                    <!-- Bag 3: Classic Tote Bag -->
+                    <div class="product-card">
+                        <h3>Classic Tote Bag</h3>
+                        <h4>Spacious and Stylish</h4>
+                        <p>
+                            A classic tote designed for both style and convenience.
+                            Spacious enough for your daily essentials while keeping
+                            your look elegant.
+                        </p>
+                        <img src="tote-bag.jpg" alt="Classic luxury tote bag">
+                        <div>
+                            <a href="places/tote-bag.html" class="btn-details">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Region -->
+        <footer>
+            <p>© 2026 Patooties Collection</p>
+            <p>Elegance in every detail.</p>
+        </footer>
+
+    </div>
 
 </body>
 
